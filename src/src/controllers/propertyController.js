@@ -158,16 +158,3 @@ export const deleteProperty = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-<<<<<<< HEAD
-
-export const getPropertyHistory = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const history = db.prepare('SELECT * FROM property_history WHERE property_id = ? ORDER BY created_at DESC').all(id);
-    res.json(history);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
-=======
->>>>>>> ea169e37f18b2fc580668ac87b740c8361c3ceb8
