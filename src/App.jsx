@@ -14,11 +14,14 @@ import MapViewPage from './pages/MapViewPage';
 import SavedHomesPage from './pages/SavedHomesPage';
 import CommuteInsightsPage from './pages/CommuteInsightsPage';
 import AccountPage from './pages/AccountPage';
+<<<<<<< HEAD
 import ListPropertySection from './components/ListPropertySection';
 import RegisterPropertyPage from './pages/RegisterPropertyPage';
 import AdminDashboardPage from './pages/AdminDashboardPage';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
+=======
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
 
 const LandingPage = () => (
   <div className="bg-surface font-body text-on-surface min-h-screen">
@@ -27,7 +30,10 @@ const LandingPage = () => (
       <Hero />
       <PreviewSection />
       <ValueProp />
+<<<<<<< HEAD
       <ListPropertySection />
+=======
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
     </main>
     <Footer />
   </div>
@@ -35,6 +41,7 @@ const LandingPage = () => (
 
 function App() {
   return (
+<<<<<<< HEAD
     <AuthProvider>
       <BrowserRouter>
         <Routes>
@@ -53,6 +60,22 @@ function App() {
         </Routes>
       </BrowserRouter>
     </AuthProvider>
+=======
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/properties" element={<PropertiesPage />} />
+        <Route path="/commute-setup" element={<CommuteSetupPage />} />
+        <Route path="/map-view" element={<MapViewPage />} />
+        <Route path="/saved-homes" element={<SavedHomesPage />} />
+        <Route path="/commute-insights" element={<CommuteInsightsPage />} />
+        <Route path="/account" element={<AccountPage />} />
+      </Routes>
+    </BrowserRouter>
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
   );
 }
 

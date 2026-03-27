@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
 import { useAuth } from '../context/AuthContext';
 
 const Navbar = () => {
@@ -14,6 +15,16 @@ const Navbar = () => {
     } else {
       navigate('/login');
     }
+=======
+
+const Navbar = () => {
+  const navigate = useNavigate();
+
+  // These links require login — redirect to /login
+  const handleProtectedLink = (e) => {
+    e.preventDefault();
+    navigate('/login');
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
   };
 
   return (
@@ -28,20 +39,29 @@ const Navbar = () => {
         <a
           className="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-200 cursor-pointer"
           href="#"
+<<<<<<< HEAD
           onClick={(e) => handleProtectedLink(e, '/properties')}
+=======
+          onClick={handleProtectedLink}
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
         >
           Rent
         </a>
         <a
           className="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-200 cursor-pointer"
           href="#"
+<<<<<<< HEAD
           onClick={(e) => handleProtectedLink(e, '/properties')}
+=======
+          onClick={handleProtectedLink}
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
         >
           Buy
         </a>
         <a
           className="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-colors duration-200 cursor-pointer"
           href="#"
+<<<<<<< HEAD
           onClick={(e) => handleProtectedLink(e, '/commute-setup')}
         >
           Commute Tools
@@ -79,6 +99,20 @@ const Navbar = () => {
             Sign In
           </button>
         )}
+=======
+          onClick={handleProtectedLink}
+        >
+          Commute Tools
+        </a>
+      </nav>
+      <div className="flex items-center gap-4">
+        <button
+          className="text-blue-700 dark:text-blue-400 font-bold hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200"
+          onClick={() => navigate('/login')}
+        >
+          Sign In
+        </button>
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
       </div>
     </header>
   );

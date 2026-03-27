@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -18,6 +19,18 @@ const LoginPage = () => {
     } else {
       setError(result.error);
     }
+=======
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const LoginPage = () => {
+  const navigate = useNavigate();
+
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    // After sign-in, navigate to dashboard
+    navigate('/dashboard');
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
   };
 
   return (
@@ -66,6 +79,7 @@ const LoginPage = () => {
             <p className="text-on-surface-variant font-medium">Continue your heritage journey.</p>
           </div>
 
+<<<<<<< HEAD
           {error && (
             <div className="mb-6 p-4 bg-error-container text-on-error-container rounded-xl text-sm font-bold flex items-center gap-2">
               <span className="material-symbols-outlined text-sm">error</span>
@@ -73,6 +87,8 @@ const LoginPage = () => {
             </div>
           )}
 
+=======
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
           <form className="space-y-6" onSubmit={handleSignIn}>
             {/* Email */}
             <div className="space-y-2">
@@ -88,8 +104,11 @@ const LoginPage = () => {
                   placeholder="name@example.com"
                   type="email"
                   required
+<<<<<<< HEAD
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+=======
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
                 />
               </div>
             </div>
@@ -113,8 +132,11 @@ const LoginPage = () => {
                   placeholder="••••••••"
                   type="password"
                   required
+<<<<<<< HEAD
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+=======
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
                 />
               </div>
             </div>

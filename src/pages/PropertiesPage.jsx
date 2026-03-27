@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -32,6 +33,26 @@ const DashboardSidebar = ({ filters, setFilters, applyFilters }) => (
             value={filters.maxRent}
             onChange={(e) => setFilters({...filters, maxRent: parseInt(e.target.value)})}
           />
+=======
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const properties = [
+  { id: 1, score: '9.4', title: 'The Almaris Residences', location: 'Greater Kailash II, New Delhi', price: '₹1.2L', beds: '3 BHK', sqft: '2,400 sqft', commute: '5 min', commuteIcon: 'directions_transit', saved: false, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuChrgiE-GX-CWwlXHN1Bu6jLxYt8q43kPqVKF35ugsyH51Py0MOsPS0pro9eQ95CrqazS4F2LgL1XBOHnHwvMMfBPK1AIorwqKr7LoRIAEM0c6FSLcqIu3WnBAy9NfpHPvddaVCRa6_SEtW6SvXyBtYhfd6t8UHXwCMo6lPolagQCLI7L5ZPC156u0iXmDkxt6L9s3v7-YHBKisPNtRMvusb4kYKWdSFrnYeWHWT2cy2DBXAEO4TIhZyQC14hzYOU5iH0h_NprryTuf' },
+  { id: 2, score: '8.1', title: 'Shanti Niketan Floor', location: 'Chanakyapuri, New Delhi', price: '₹2.8L', beds: '4 BHK', sqft: '3,600 sqft', commute: '12 min', commuteIcon: 'directions_car', saved: true, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBUCRPoVv0KdRktCLPZ4Cz1q6bX04Vxq8QoTGI1AhYTnLuEZJeOXcm6CqDBmE-7SX2M5kMKcmq0zHc10_0TWnx3a72aDW1iHTTahMJufSvNCJ_hMBjmIN3YAvxsuu6vgBoQTGa8_h0SEw4RCXB4hkSajC3tfgfU13tGcmmEkR8WKIm6OMPclzYSzWxUaP2q5T6OIEQgVn9kzdW6-sXisNYVqadT0HC-jpTyvJC4DCLmYraI1IXVGtJfDazf0xLPIr4XVCi2y3BQcGZ2' },
+  { id: 3, score: '7.5', title: 'Vasant Vihar Terrace', location: 'Vasant Vihar, New Delhi', price: '₹85k', beds: '2 BHK', sqft: '1,800 sqft', commute: '8 min', commuteIcon: 'pedal_bike', saved: false, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD6klEtqNCn1t5idJi9otnWTaWTXjUIyWfJUZEj5CAfNluFoKHcBA45jy7XjLqriZBm69exB4Lvur4HDlTlFGN1JArVncQRqFRfUD-xKPU_OCgaVDGaCUKeq16fTtnfR3oHOJUzyM11DYUNseC4mGRFIRTN-k6BrDtNFaiZ2Uvjb9GC1nB8IAxMTqnOSrFcJxD3nmEC24NymSW4CQWTW6H9Zio3Wl538K80aJ45F0zPwr-07KoxSO8nNkDdJO8pkda-Dni6OM8a4UQM' },
+  { id: 4, score: '8.9', title: 'Defence Colony Studio', location: 'Def Col, New Delhi', price: '₹65k', beds: '1 BHK', sqft: '950 sqft', commute: '4 min', commuteIcon: 'directions_bus', saved: false, img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBlWwgMKWscRBeLdX7tIGiwovJI0Lo3B2hB9Ms0C1FE329sSr5SrqHaZF8iXopD--scP8GiRbMhYbkGwfsA_In4wm104kWwm315Gqs5LnbnYUcwRZohm6DQ8SpTn4Xv4PvXff_jSC_LoQAQ1agqVahwHrUzEuLm36aYozmoH8wrlVlTV_VSrhWF51sTYKCnGZsmY2z9dotugYyUxN-g2SYAhK-P_DwTuNONozTJtaitKfB1Qu1nBmIqFuKunTZRFssd8W2RSKyqKTjz' },
+];
+
+const DashboardSidebar = ({ navigate, active }) => (
+  <aside className="hidden lg:flex flex-col h-screen sticky top-0 p-6 gap-8 w-80 bg-slate-50 border-r-0">
+    <div className="flex flex-col gap-6">
+      <h2 className="font-headline text-xl font-bold text-on-surface">Filters</h2>
+      <div className="flex flex-col gap-3">
+        <span className="text-xs font-label font-bold uppercase tracking-widest text-secondary">Monthly Budget</span>
+        <div className="bg-surface-container-high rounded-xl p-4 flex flex-col gap-2">
+          <input className="w-full accent-primary" max="200000" min="10000" step="5000" type="range" />
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
           <div className="flex justify-between text-sm font-semibold text-on-surface-variant">
             <span>₹10k</span><span>₹200k+</span>
           </div>
@@ -40,6 +61,7 @@ const DashboardSidebar = ({ filters, setFilters, applyFilters }) => (
       <div className="flex flex-col gap-3">
         <span className="text-xs font-label font-bold uppercase tracking-widest text-secondary">Max Commute Time</span>
         <div className="flex flex-wrap gap-2">
+<<<<<<< HEAD
           {[15, 30, 45, 60].map((t) => (
             <button 
               key={t} 
@@ -48,12 +70,28 @@ const DashboardSidebar = ({ filters, setFilters, applyFilters }) => (
             >
               {t === 60 ? '60+ min' : `${t} min`}
             </button>
+=======
+          {['15 min', '30 min', '45 min', '60+ min'].map((t, i) => (
+            <button key={t} className={`px-3 py-2 rounded-xl text-xs font-bold ${i === 0 ? 'bg-white shadow-sm text-primary border border-primary/10' : 'bg-surface-container text-on-surface-variant hover:bg-white transition-all'}`}>{t}</button>
+          ))}
+        </div>
+      </div>
+      <div className="flex flex-col gap-3">
+        <span className="text-xs font-label font-bold uppercase tracking-widest text-secondary">Property Type</span>
+        <div className="flex flex-col gap-2">
+          {[['Apartments', true], ['Independent Floor', false], ['Villas', false]].map(([label, checked]) => (
+            <label key={label} className="flex items-center gap-3 p-3 rounded-xl hover:bg-white transition-all cursor-pointer group">
+              <input defaultChecked={checked} className="rounded border-none bg-surface-container-highest text-primary focus:ring-primary/20" type="checkbox" />
+              <span className="text-sm font-medium text-on-surface-variant group-hover:text-primary">{label}</span>
+            </label>
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
           ))}
         </div>
       </div>
       <div className="flex flex-col gap-3">
         <span className="text-xs font-label font-bold uppercase tracking-widest text-secondary">Preferred Commute</span>
         <div className="grid grid-cols-2 gap-2">
+<<<<<<< HEAD
           <button 
             onClick={() => setFilters({...filters, transportMode: 'car'})}
             className={`flex items-center gap-2 p-3 rounded-xl transition-all ${filters.transportMode === 'car' ? 'bg-white shadow-sm border border-primary/20 text-primary' : 'bg-surface-container-low hover:bg-white'}`}
@@ -67,23 +105,37 @@ const DashboardSidebar = ({ filters, setFilters, applyFilters }) => (
           >
             <span className="material-symbols-outlined text-xl" style={filters.transportMode === 'bus' ? {fontVariationSettings: "'FILL' 1"} : {}}>train</span>
             <span className="text-xs font-bold">Transit</span>
+=======
+          <button className="flex items-center gap-2 p-3 rounded-xl bg-white shadow-sm border border-primary/10">
+            <span className="material-symbols-outlined text-primary text-xl">directions_car</span>
+            <span className="text-xs font-bold">Driving</span>
+          </button>
+          <button className="flex items-center gap-2 p-3 rounded-xl bg-surface-container-low hover:bg-white transition-all">
+            <span className="material-symbols-outlined text-secondary text-xl">train</span>
+            <span className="text-xs font-bold">Metro</span>
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
           </button>
         </div>
       </div>
     </div>
     <div className="mt-auto pt-6">
+<<<<<<< HEAD
       <button 
         onClick={applyFilters}
         className="w-full bg-primary text-white py-4 rounded-xl font-bold shadow-lg shadow-primary/20 active:scale-95 transition-all"
       >
         Apply Selection
       </button>
+=======
+      <button className="w-full bg-primary text-white py-4 rounded-xl font-bold shadow-lg shadow-primary/20 active:scale-95 transition-all">Apply 12 Filters</button>
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
     </div>
   </aside>
 );
 
 const PropertiesPage = () => {
   const navigate = useNavigate();
+<<<<<<< HEAD
   const { user, logout } = useAuth();
   const [allProperties, setAllProperties] = useState([]);
   const [displayedProperties, setDisplayedProperties] = useState([]);
@@ -141,6 +193,8 @@ const PropertiesPage = () => {
     }
   };
 
+=======
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
   return (
     <div className="bg-surface font-body text-on-surface selection:bg-primary-fixed">
       <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -155,6 +209,7 @@ const PropertiesPage = () => {
             </nav>
           </div>
           <div className="flex items-center gap-4">
+<<<<<<< HEAD
             {comparisonList.length > 0 && (
               <button 
                 onClick={() => navigate('/map-view', { state: { comparison: comparisonList } })}
@@ -179,18 +234,31 @@ const PropertiesPage = () => {
                 />
               </div>
             </div>
+=======
+            <button className="p-2 rounded-full hover:bg-slate-50"><span className="material-symbols-outlined text-slate-600">notifications</span></button>
+            <button className="p-2 rounded-full hover:bg-slate-50"><span className="material-symbols-outlined text-slate-600">settings</span></button>
+            <img alt="User" className="w-10 h-10 rounded-full object-cover cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXP10LLQ9pIrajiQGrh7oQV2ViJgM-_MKSPDES5B9tbGcX7YAopN1O-yw461quFywK9vqXqP2zG9heVScpIbegvKXdBL_V92vTo3zGGGIKrQ0EkNjRHsC4Wcb1pwskZpx2kmEJpdsLbFYQNRvI9IfAUZ88y6t8R7_X-7PCnHmTnzOlBEQIewqSU6aND1utSoJW0dmUnlLqjZ4SL-Dn9yNkvHS7xbE9NAyPhshlOst8mvMGxMeGJ7Cl7FUW8b0FbIqSWAKVb0tK9BjA" onClick={() => navigate('/dashboard')} />
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
           </div>
         </div>
       </header>
 
       <div className="flex min-h-screen">
+<<<<<<< HEAD
         <DashboardSidebar filters={filters} setFilters={setFilters} applyFilters={applyFilters} />
+=======
+        <DashboardSidebar navigate={navigate} />
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
         <main className="flex-1 bg-surface relative" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(193,198,214,0.1) 1px, transparent 0)', backgroundSize: '24px 24px' }}>
           <div className="max-w-7xl mx-auto px-6 py-12">
             <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
               <div className="max-w-2xl">
                 <h1 className="text-5xl font-headline font-extrabold text-on-surface mb-4 leading-tight">Heritage living meets modern commute.</h1>
+<<<<<<< HEAD
                 <p className="text-secondary max-w-lg leading-relaxed">Discover {displayedProperties.length} verified properties tailored to your work-life rhythm in {user?.workplace_address?.split(',')[0] || 'Nagpur'} and beyond.</p>
+=======
+                <p className="text-secondary max-w-lg leading-relaxed">Discover 1,240 verified properties tailored to your work-life rhythm in Nagpur and beyond.</p>
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
               </div>
               <button className="flex items-center gap-2 px-6 py-3 bg-surface-container-lowest rounded-full font-bold text-sm shadow-sm hover:bg-white transition-all">
                 <span className="material-symbols-outlined text-lg">swap_vert</span>Sort by: Relevance
@@ -198,6 +266,7 @@ const PropertiesPage = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<<<<<<< HEAD
               {loading ? (
                 <div className="col-span-full h-64 flex items-center justify-center">
                   <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
@@ -271,6 +340,39 @@ const PropertiesPage = () => {
                   </div>
                 );
               })}
+=======
+              {properties.map((p) => (
+                <div key={p.id} className="flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-500">
+                  <div className="relative h-72 overflow-hidden">
+                    <img alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={p.img} />
+                    <div className="absolute top-4 left-4 px-4 py-3 rounded-xl border-l-[3px] border-tertiary flex flex-col shadow-2xl" style={{ background: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(12px)' }}>
+                      <span className="text-[0.6rem] font-label font-bold uppercase tracking-wider text-secondary">Commute Score</span>
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-2xl font-headline font-extrabold text-on-surface">{p.score}</span>
+                        <span className="text-xs font-bold text-tertiary">/10</span>
+                      </div>
+                    </div>
+                    <button className="absolute top-4 right-4 bg-white/20 backdrop-blur-md p-2 rounded-full text-white hover:bg-white hover:text-error transition-all">
+                      <span className="material-symbols-outlined" style={p.saved ? { fontVariationSettings: "'FILL' 1" } : {}}>favorite</span>
+                    </button>
+                  </div>
+                  <div className="p-6 flex flex-col gap-4">
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h3 className="text-xl font-headline font-bold text-on-surface">{p.title}</h3>
+                        <p className="text-sm text-secondary">{p.location}</p>
+                      </div>
+                      <span className="text-xl font-headline font-extrabold text-primary">{p.price}<span className="text-xs font-medium text-secondary ml-1">/mo</span></span>
+                    </div>
+                    <div className="flex items-center gap-6 py-4 bg-surface-container-low rounded-xl px-4">
+                      <div className="flex items-center gap-2"><span className="material-symbols-outlined text-secondary text-lg">bed</span><span className="text-sm font-bold">{p.beds}</span></div>
+                      <div className="flex items-center gap-2"><span className="material-symbols-outlined text-secondary text-lg">square_foot</span><span className="text-sm font-bold">{p.sqft}</span></div>
+                      <div className="flex items-center gap-2"><span className="material-symbols-outlined text-secondary text-lg">{p.commuteIcon}</span><span className="text-sm font-bold">{p.commute}</span></div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+>>>>>>> 90a57079e5fcd63a8eef1ea5655692b4b5b26858
 
               {/* CTA Card */}
               <div className="flex flex-col bg-primary-container rounded-xl overflow-hidden relative p-8 justify-center items-start text-white xl:col-span-2">
